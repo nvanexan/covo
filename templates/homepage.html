@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shoelace -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- Covo CSS    -->
+    <link href="../css/normalize.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="home-page">
+      <header class="header">
+        <div class="header-top">
+          <a href="/">
+            <img
+              src="https://media.licdn.com/dms/image/C5603AQFBtkt_gQiITg/profile-displayphoto-shrink_400_400/0/1658503490158?e=1706140800&v=beta&t=JEsS6JYsx4lZDPVEKsggIHFcGCSjY8Cwp4c_mHgFv54"
+              alt="Ricardo Covo"
+              class="profile-photo"
+            />
+            <span class="sr-only"
+              >Photo of Ricardo Covo: click to return to home page</span
+            >
+          </a>
+          <div class="header-top-right">
+            <h1 class="header-title-name">
+              <a href="/"
+                >Ricardo Covo
+                <span class="sr-only">click to return to home page</span></a
+              >
+            </h1>
+            <nav
+              class="social-nav"
+              aria-label="Links to Ricardo Covo's social media pages"
+            >
+              <ul>
+                <li>
+                  <a href="/">
+                    <sl-icon name="linkedin"></sl-icon>
+                    <span class="sr-only">Linked In</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="twitter"></sl-icon>
+                    <span class="sr-only">Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="github"></sl-icon>
+                    <span class="sr-only">GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="rss"></sl-icon>
+                    <span class="sr-only">RSS</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <blockquote class="mission-statement">
+          Every moment is an opportunity to be kind, caring and mindful. Always
+          aim to create positive impact around you.​
+        </blockquote>
+        <p class="bio-short-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas
+          finibus risus, id rutrum nisi facilisis sit amet. Ut eu luctus purus.
+          Donec in tristique mauris, eu consectetur risus.​
+        </p>
+      </header>
+      <main class="main">
+        <section class="main-section">
+          <h2><sl-icon name="pencil-square"></sl-icon>Latest from Blog</h2>
+          <div class="card blog-post-card">
+            <h3 class="blog-post-card-title">Blog Post Title</h3>
+            <p class="blog-post-card-date">November 25, 2023</p>
+            <ul class="blog-post-card-tags">
+              <li><a href="#">Tag 1</a></li>
+              <li><a href="#">Tag 2</a></li>
+              <li><a href="#">Tag 3</a></li>
+            </ul>
+            <div class="blog-post-card-content">
+              <p class="blog-post-card-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                egestas finibus risus, id rutrum nisi facilisis sit amet. Ut eu
+                luctus purus. Donec in tristique mauris, eu consectetur risus.​
+              </p>
+            </div>
+            <a href="/">Read More</a>
+          </div>
+        </section>
+        <section class="main-section">
+          <h2><sl-icon name="megaphone"></sl-icon>Speaking</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            egestas finibus risus, id rutrum nisi facilisis sit amet. Ut eu
+            luctus purus. Donec in tristique mauris, eu consectetur risus.​
+          </p>
+        </section>
+        <section class="main-section">
+          <h2><sl-icon name="headphones"></sl-icon>Listening</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            egestas finibus risus, id rutrum nisi facilisis sit amet. Ut eu
+            luctus purus. Donec in tristique mauris, eu consectetur risus.​
+          </p>
+        </section>
+        <section class="main-section">
+          <h2><sl-icon name="book"></sl-icon> Reading</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            egestas finibus risus, id rutrum nisi facilisis sit amet. Ut eu
+            luctus purus. Donec in tristique mauris, eu consectetur risus.​
+          </p>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>&copy; 2023 Ricardo Covo</p>
+      </footer>
+    </div>
+  </body>
+</html>

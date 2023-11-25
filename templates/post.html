@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shoelace -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- Covo CSS    -->
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/normalize.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="post-page">
+      <header class="header">
+        <div class="inner-container">
+          <div class="header-left">
+            <a href="/">
+              <img
+                src="https://media.licdn.com/dms/image/C5603AQFBtkt_gQiITg/profile-displayphoto-shrink_400_400/0/1658503490158?e=1706140800&v=beta&t=JEsS6JYsx4lZDPVEKsggIHFcGCSjY8Cwp4c_mHgFv54"
+                alt="Ricardo Covo"
+                class="profile-photo"
+              />
+              <span class="sr-only"
+                >Photo of Ricardo Covo: click to return to home page</span
+              >
+            </a>
+            <div class="header-title">
+              <p class="header-title-name">
+                <a href="/"
+                  >Ricardo Covo
+                  <span class="sr-only">click to return to home page</span></a
+                >
+              </p>
+              <p><em>Sharing is caring 😊</em></p>
+            </div>
+          </div>
+          <div class="header-right">
+            <nav class="main-nav" aria-label="Main navigation">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/about">About</a></li>
+              </ul>
+            </nav>
+            <nav
+              class="social-nav"
+              aria-label="Links to Ricardo Covo's social media pages"
+            >
+              <ul>
+                <li>
+                  <a href="/">
+                    <sl-icon name="linkedin"></sl-icon>
+                    <span class="sr-only">Linked In</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="twitter"></sl-icon>
+                    <span class="sr-only">Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="github"></sl-icon>
+                    <span class="sr-only">GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="rss"></sl-icon>
+                    <span class="sr-only">RSS</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="inner-container">
+          <h1>Markdoc</h1>
+
+          <p>
+            Last week I discovered
+            <a href="https://markdoc.io/" target="_blank">Markdoc</a>. It's a
+            Markdown parser and authoring framework by the folks at
+            <a href="https://stripe.com" target="_blank">Stripe</a> that allows
+            you to <em>compose</em> content in a fully declarative way.<sup
+              class="footnote-ref"
+              ><a id="fnref1" href="#fn1">1</a></sup
+            >
+            I love the philosophy and ambition.
+          </p>
+          <p>
+            For the past couple of years I've used
+            <a href="https://nextjs.org/" target="_blank">Next.JS</a> +
+            <a href="https://mdxjs.com/" target="_blank">MDX</a> to render my
+            site. This worked well, and I thought the combination of static site
+            rendering and then hydration with React was great. But over time,
+            I've learned that I don't need or want React at all. All I really
+            need is some HTML and CSS with a sprinkle of JS here and there. I
+            got pretty close to this on the last iteration of my site, but
+            ultimately needed MDX and Next.JS to help shape my Markdown into a
+            design.
+          </p>
+          <p>
+            Markdown is great, and you can use it to express quite a bit, but
+            there's always been a &quot;last mile&quot; wherein you need
+            something else to get your Markdown files transformed into the HTML
+            needed to match your design and interactivity goals. And it's here -
+            precisely in this last mile - that Markdoc fills an important void.
+          </p>
+          <h2 class="heading" id="what-makes-markdoc-unique">
+            <a href="#what-makes-markdoc-unique" class="heading-link"
+              >What makes Markdoc unique</a
+            >
+          </h2>
+          <p>
+            The folks at Stripe have a good description of what makes Markdoc
+            unique
+            <a href="https://markdoc.io/docs/overview" target="_blank">here</a>.
+            The highlights for me were:
+          </p>
+          <ol>
+            <li>
+              It extends Markdown with a custom syntax for tags and annotations,
+              providing a way to tailor content to individual users and
+              introduce interactive elements, such as native web components.
+            </li>
+            <li>
+              It has a simple and elegant design: creating an abstract syntax
+              tree, which you can then use to render HTML, JSX or anything else
+              you want.
+            </li>
+            <li>
+              It provides an extensible system for defining custom tags that can
+              be used seamlessly in Markdown content. This means it can support
+              things like custom tags, conditional content, variable
+              interpolation, and so on.
+            </li>
+          </ol>
+          <p>
+            And I was excited to see that they included an HTML renderer in
+            addition to renderers for JSX. The dream of being able to go from
+            Markdown to a more sophisticated HTML / CSS template, without React,
+            finally seemed feasible.
+          </p>
+          <h2 class="heading" id="how-it-works">
+            <a href="#how-it-works" class="heading-link">How it works</a>
+          </h2>
+          <p>
+            Markdoc is a superset of Markdown (specifically the
+            <a href="https://spec.commonmark.org/" target="_blank"
+              >CommonMark spec</a
+            >), which means the syntax you use for your content is basically
+            just Markdown, but you can add additional custom content with custom
+            &quot;Tags&quot;.
+          </p>
+          <p>
+            There's
+            <a href="https://markdoc.io/docs/render" target="_blank"
+              >three phases</a
+            >
+            to rendering Markdoc: (1) parse; (2) transform; (3) render. You pass
+            your content into the parser. The parser creates an
+            <a
+              href="https://en.wikipedia.org/wiki/Abstract_syntax_tree"
+              target="_blank"
+              >abstract syntax tree</a
+            >, which you then process through a transformer method into objects
+            the renderer can understand, and then the renderer renders the
+            desired output (HTML, JSX, etc.).
+          </p>
+          <p>
+            For example, let's say I wanted to render custom
+            <code>&lt;section&gt;</code> elements within my markup. I can do
+            that with Markdoc like so.
+          </p>
+          <p>
+            First, I would define that element in my Markdown file using the
+            Markdoc tag syntax.
+          </p>
+          <pre
+            data-language="liquid"
+            class="language-liquid"
+          ><code data-language="liquid" class="language-liquid"># Header
+
+{% section %}
+
+This content will be rendered in a `section` element
+
+{% /section %}
+</code></pre>
+          <p>
+            Second, I would create a custom Tag schema and add it to the config
+            object I will eventually pass to the Markdoc parser for parsing.
+          </p>
+          <pre
+            data-language="typescript"
+            class="language-typescript"
+          ><code data-language="typescript" class="language-typescript">import { Config, Node, Tag } from &quot;@markdoc/markdoc&quot;;
+
+export const section = {
+  description: &quot;Create a section container&quot;,
+  children: [&quot;heading&quot;, &quot;paragraph&quot;, &quot;list&quot;, &quot;item&quot;, &quot;tag&quot;],
+  attributes: {},
+  transform: (node: Node, config: Config) =&gt; {
+    const attributes = node.transformAttributes(config);
+    const children = node.transformChildren(config);
+    return new Tag(`section`, attributes, children);
+  },
+};
+</code></pre>
+          <pre
+            data-language="typescript"
+            class="language-typescript"
+          ><code data-language="typescript" class="language-typescript">import { section } from &quot;./section.markdoc&quot;;
+
+export const config = {
+  nodes: {},
+  tags: {
+    section,
+  },
+  partials: {},
+};
+</code></pre>
+          <p>
+            Third, I would pass the content I want to transform and the config
+            with my custom Tags to Markdoc to parse.
+          </p>
+          <pre
+            data-language="javascript"
+            class="language-javascript"
+          ><code data-language="javascript" class="language-javascript">import { config } from &quot;./config.markdoc&quot;;
+
+const ast = Markdoc.parse(markdownFile);
+const content = Markdoc.transform(ast, config);
+const html = Markdoc.renderers.html(content);
+</code></pre>
+          <p>
+            And that's basically it. Applied to the example above, the end
+            result is a <code>&lt;section&gt;</code> tag in my HTML, which I can
+            then style or augment with JS as needed.<sup class="footnote-ref"
+              ><a id="fnref2" href="#fn2">2</a></sup
+            >
+          </p>
+          <pre
+            data-language="html"
+            class="language-html"
+          ><code data-language="html" class="language-html">&lt;article&gt;
+  &lt;h1&gt;Header&lt;/h1&gt;
+  &lt;section&gt;
+    &lt;p&gt;This content will be rendered in a &lt;code&gt;section&lt;/code&gt; element.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+          <p>
+            I can now reuse the <code>{% section %}</code> tag anywhere in my
+            Markdown documents. And you can certainly go further. For example,
+            instead of rendering a simple <code>&lt;section&gt;</code> element,
+            you can render a
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+              target="_blank"
+              >web component</a
+            >, complete with its own UI logic and shadow dom.
+          </p>
+          <p>
+            You can also
+            <a href="https://markdoc.io/docs/tags#built-in-tags" target="_blank"
+              >conditionally render section blocks</a
+            >, use
+            <a href="https://markdoc.io/docs/partials" target="_blank"
+              >partials</a
+            >
+            to DRY out your Markdown content that is repetitive across files,
+            define and use
+            <a href="https://markdoc.io/docs/variables" target="_blank"
+              >variables</a
+            >, and
+            <a href="https://markdoc.io/docs/getting-started" target="_blank"
+              >so on</a
+            >.
+          </p>
+          <h2
+            class="heading"
+            id="performance-gains-using-markdoc-+-custom-build"
+          >
+            <a
+              href="#performance-gains-using-markdoc-+-custom-build"
+              class="heading-link"
+              >Performance gains using Markdoc + custom build</a
+            >
+          </h2>
+          <p>
+            I spent last weekend re-writing my site to remove Next.JS (and thus
+            React) and make use of Markdoc. I cut a
+            <a href="https://github.com/nvanexan/nve2022" target="_blank"
+              >fresh repo</a
+            >. I built a simple build script in TypeScript which takes my
+            Markdown files, templated with Markdoc, and renders them to static
+            html pages using the Markdoc HTML renderer.
+          </p>
+          <p>
+            There's a bit more to it than that, of course. I had to add support
+            for CSS parsing, so critical styles could be injected into the html
+            files before the global.css loaded, frontmatter parsing for meta
+            tags for SEO reasons, etc. But by the end of the weekend, I had
+            succeeded in removing React and creating a super lightweight site of
+            basically just HTML and CSS.
+          </p>
+          <p>
+            The performance results were fun. Some comparisons of
+            <a
+              href="https://developers.google.com/web/tools/lighthouse"
+              target="_blank"
+              >Lighthouse</a
+            >
+            metrics...
+          </p>
+          <p>
+            <figure class="image-container">
+              <img
+                src="https://nick.vanexan.ca/public/images/old-site-desktop.webp"
+                alt="Next.JS + MDX version - desktop"
+              />
+              <figcaption>Next.JS + MDX version - desktop</figcaption>
+            </figure>
+          </p>
+          <p>
+            <figure class="image-container">
+              <img
+                src="https://nick.vanexan.ca/public/images/new-site-desktop.webp"
+                alt="Custom Markdoc version - desktop"
+              />
+              <figcaption>Custom Markdoc version - desktop</figcaption>
+            </figure>
+          </p>
+          <p>
+            <figure class="image-container">
+              <img
+                src="https://nick.vanexan.ca/public/images/old-site-mobile.webp"
+                alt="Next.JS + MDX version - mobile"
+              />
+              <figcaption>Next.JS + MDX version - mobile</figcaption>
+            </figure>
+          </p>
+          <p>
+            <figure class="image-container">
+              <img
+                src="https://nick.vanexan.ca/public/images/new-site-mobile.webp"
+                alt="Custom Markdoc version - mobile"
+              />
+              <figcaption>Custom Markdoc version - mobile</figcaption>
+            </figure>
+          </p>
+          <h2 class="heading" id="lessons-learned">
+            <a href="#lessons-learned" class="heading-link">Lessons learned</a>
+          </h2>
+          <p>I learned some lessons along my journey.</p>
+          <p>
+            First, not all Markdown tokens or features are supported by Markdoc.
+            Link and image title attributes, for example, were not supported
+            initially. I've since contributed a couple of PRs to get those items
+            handled by the parser.<sup class="footnote-ref"
+              ><a id="fnref3" href="#fn3">3</a></sup
+            >
+            Similarly, footnotes are not directly supported at the time of
+            writing. This means that the parser, which creates the AST, doesn't
+            inherently parse Markdown footnotes at the first stage of
+            processing. I made a
+            <a href="https://github.com/markdoc/markdoc/pull/40" target="_blank"
+              >PR to the Markdoc repo</a
+            >
+            to provide support for footnotes in the Markdoc parser itself, but
+            the authors have, I think fairly, declined the addition of this for
+            now. They would prefer that users re-mix existing APIs rather than
+            continually extend the syntax of Markdoc itself. The user is then
+            left with a couple of options: create and use custom tags, like
+            <code>{% footnotes %}</code>, or wrap the Markdoc parser with
+            extended functionality for making footnotes supported in the AST as
+            nodes vs. just tags.<sup class="footnote-ref"
+              ><a id="fnref4" href="#fn4">4</a></sup
+            >
+          </p>
+          <p>
+            Second, there is the age-old engineering issue of trade-offs. I had
+            some hesitation about incorporating a specific syntax into my fairly
+            vanilla Markdown files. To be sure, I had to make this choice when I
+            chose MDX before too. But it is an important consideration, as you
+            will start to get married to the specific syntax. For example, at
+            the top of my blog posts, I use a
+            <a href="https://markdoc.io/docs/partials" target="_blank"
+              >Markdoc partial</a
+            >
+            to render the header of each post, so I can keep my code dry and not
+            have to repeat this everywhere. But when viewing the document
+            outside of this website, the syntax appears alien and not super fun
+            to look at. If you value <em>clean</em> and
+            <em>portable</em> Markdown (<em>i.e.</em> easily readable /
+            parseable / transferrable across apps and other places that accept
+            Markdown) then Markdoc is likely not for you.
+          </p>
+          <p>
+            Third, it's important to keep in mind what renderer you're going to
+            use. In my case I chose to render HTML instead of JSX, so I could
+            use basic HTML and then add web components as needed. But
+            <a
+              href="https://lamplightdev.com/blog/2019/07/20/how-to-server-side-render-web-components/"
+              target="_blank"
+              >static rendering of native web components isn't well supported</a
+            >
+            because, well, those components rely on the actual browser window
+            for operation. So there's more cognitive effort required to do
+            static and progressive enhancement with web components to avoid
+            layout shifts, etc. Accordingly, you may wish to
+            <a href="https://markdoc.io/docs/nextjs" target="_blank"
+              >combine Markdoc with Next.JS</a
+            >
+            or
+            <a href="https://markdoc.io/docs/examples/react" target="_blank"
+              >React</a
+            >
+            if it better fits your use case.
+          </p>
+          <h2 class="heading" id="concluding-thoughts">
+            <a href="#concluding-thoughts" class="heading-link"
+              >Concluding thoughts</a
+            >
+          </h2>
+          <p>
+            <a href="https://markdoc.io" target="_blank">Markdoc</a> is super
+            great. And powerful. If you've ever wanted your Markdown to support
+            things like templating, conditionals, variables, etc., Markdoc makes
+            it dead easy to support and implement, with a nice API for extending
+            and building your own tags.
+          </p>
+          <p>
+            I'm going to keep experimenting with it, and contributing to it too.
+            I think it has a lot of value and promise.
+          </p>
+          <section class="article-footer">
+            <p>
+              <em
+                >Nice, you made it to the end of this post. Thanks for reading.
+                Other posts by me are over on my
+                <a href="https://nick.vanexan.ca/writing">writing page</a>. If
+                you'd like to subscribe to this blog, you can do so via
+                <a href="/feed.xml">RSS</a> or
+                <a href="https://buttondown.email/nickvanexan" target="_blank"
+                  >Email Newsletter</a
+                >.</em
+              >
+            </p>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="inner-container"><p>&copy; 2023 Ricardo Covo</p></div>
+      </footer>
+    </div>
+    <script defer src="../js/prism.js"></script>
+  </body>
+</html>

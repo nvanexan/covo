@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts Page</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shoelace -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <!-- Covo CSS    -->
+    <link href="../css/normalize.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="posts-page">
+      <header class="header">
+        <div class="inner-container">
+          <div class="header-left">
+            <a href="/">
+              <img
+                src="https://media.licdn.com/dms/image/C5603AQFBtkt_gQiITg/profile-displayphoto-shrink_400_400/0/1658503490158?e=1706140800&v=beta&t=JEsS6JYsx4lZDPVEKsggIHFcGCSjY8Cwp4c_mHgFv54"
+                alt="Ricardo Covo"
+                class="profile-photo"
+              />
+              <span class="sr-only"
+                >Photo of Ricardo Covo: click to return to home page</span
+              >
+            </a>
+            <div class="header-title">
+              <p class="header-title-name">
+                <a href="/"
+                  >Ricardo Covo
+                  <span class="sr-only">click to return to home page</span></a
+                >
+              </p>
+              <p><em>Sharing is caring 😊</em></p>
+            </div>
+          </div>
+          <div class="header-right">
+            <nav class="main-nav" aria-label="Main navigation">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/about">About</a></li>
+              </ul>
+            </nav>
+            <nav
+              class="social-nav"
+              aria-label="Links to Ricardo Covo's social media pages"
+            >
+              <ul>
+                <li>
+                  <a href="/">
+                    <sl-icon name="linkedin"></sl-icon>
+                    <span class="sr-only">Linked In</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="twitter"></sl-icon>
+                    <span class="sr-only">Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="github"></sl-icon>
+                    <span class="sr-only">GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <sl-icon name="rss"></sl-icon>
+                    <span class="sr-only">RSS</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="inner-container">
+          <div class="card blog-post-card">
+            <h2 class="blog-post-card-title">
+              <a href="#">Blog Post Title</a>
+            </h2>
+            <p class="blog-post-card-date">November 25, 2023</p>
+            <ul class="blog-post-card-tags">
+              <li><a href="#">Tag 1</a></li>
+              <li><a href="#">Tag 2</a></li>
+              <li><a href="#">Tag 3</a></li>
+            </ul>
+            <div class="blog-post-card-content">
+              <img
+                src="https://nick.vanexan.ca/public/images/new-site-desktop.webp"
+                alt="image alt text"
+                class="blog-post-card-image"
+              />
+              <p class="blog-post-card-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                egestas finibus risus, id rutrum nisi facilisis sit amet. Ut eu
+                luctus purus. Donec in tristique mauris, eu consectetur risus.​
+              </p>
+            </div>
+          </div>
+
+          <div class="card blog-post-card">
+            <h2 class="blog-post-card-title">
+              <a href="#">Blog Post Title</a>
+            </h2>
+            <p class="blog-post-card-date">November 25, 2023</p>
+            <ul class="blog-post-card-tags">
+              <li><a href="#">Tag 1</a></li>
+              <li><a href="#">Tag 2</a></li>
+              <li><a href="#">Tag 3</a></li>
+            </ul>
+            <div class="blog-post-card-content">
+              <p class="blog-post-card-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                egestas finibus risus, id rutrum nisi facilisis sit amet. Ut eu
+                luctus purus. Donec in tristique mauris, eu consectetur risus.​
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="inner-container"><p>&copy; 2023 Ricardo Covo</p></div>
+      </footer>
+    </div>
+  </body>
+</html>
