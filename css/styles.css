@@ -48,6 +48,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--covo-font-family-sans);
+  display: grid;
 }
 
 p,
@@ -335,6 +336,7 @@ pre[class*="language-"] {
   list-style: none;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   font-size: calc(12 / 16 * 1rem);
 }
@@ -391,6 +393,10 @@ pre[class*="language-"] {
     justify-items: center;
   }
 
+  .home-page h1.header-title-name {
+    text-align: center;
+  }
+
   .header .inner-container {
     grid-template-columns: 1fr;
   }
@@ -433,6 +439,14 @@ pre[class*="language-"] {
 
   .profile-photo {
     width: 120px;
+  }
+
+  .blog-post-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post-card-image {
+    max-width: 100%;
   }
 }
 
